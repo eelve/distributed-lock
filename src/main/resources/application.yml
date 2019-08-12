@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+redisson:
+  address: config://127.0.0.1:6379
+  timeout: 3000
+  connectionPoolSize: 64
+  #最小空闲连接数
+  connectionMinimumIdleSize: 10
+
+spring:
+  datasource:
+    username: root
+    password: 19941130
+    url: jdbc:mysql://localhost:3306/testredissonlock?&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: cachae.entity
+
+  #哨兵模式
+  #master-name: mymaster
+  #password: xxxx
+  #sentinel-addresses: 10.47.91.83:26379,10.47.91.83:26380,10.47.91.83:26381
+  #主节点的连接池中连接数最大值
+  #masterConnectionPoolSize: 250
+  #从节点的连接池中连接数最大值
+  #slaveConnectionPoolSize: 250
+  #从节点最小空闲连接数
+  #slaveConnectionMinimumIdleSize: 15
+  #主节点最小空闲连接数
+  #masterConnectionMinimumIdleSize: 10

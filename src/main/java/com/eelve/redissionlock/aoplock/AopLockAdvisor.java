@@ -1,6 +1,6 @@
-package cachae.aoplock;
+package com.eelve.redissionlock.aoplock;
 
-import cachae.distributedlock.annotation.Lock;
+import com.eelve.redissionlock.distributedlock.annotation.Lock;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 import org.springframework.core.annotation.AnnotationUtils;

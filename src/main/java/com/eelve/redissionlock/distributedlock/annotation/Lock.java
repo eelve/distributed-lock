@@ -1,4 +1,4 @@
-package cachae.distributedlock.annotation;
+package com.eelve.redissionlock.distributedlock.annotation;
 
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;

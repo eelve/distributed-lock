@@ -1,15 +1,10 @@
-package cachae.distributedlock;
+package com.eelve.redissionlock.distributedlock;
 
-import cachae.distributedlock.lockservice.ISynMethod;
+import com.eelve.redissionlock.distributedlock.lockservice.ISynMethod;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * @Description Created by zeng.yubo on 2019/8/7.

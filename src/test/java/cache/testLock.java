@@ -1,9 +1,8 @@
 package cache;
 
-import cachae.RedissonTestApplication;
-import cachae.distributedlock.DistributedLocker;
-import cachae.entity.TestLockVo;
-import cachae.mapper.TestLockDAO;
+import com.eelve.redissionlock.RedissonTestApplication;
+import com.eelve.redissionlock.distributedlock.DistributedLocker;
+import com.eelve.redissionlock.mapper.TestLockDAO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

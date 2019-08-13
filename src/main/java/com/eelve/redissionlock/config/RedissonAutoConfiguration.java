@@ -1,9 +1,9 @@
-package cachae.config;
+package com.eelve.redissionlock.config;
 
 
-import cachae.aoplock.AopLockAdvisor;
-import cachae.distributedlock.DistributedLocker;
-import cachae.distributedlock.RedissonDistributedLocker;
+import com.eelve.redissionlock.aoplock.AopLockAdvisor;
+import com.eelve.redissionlock.distributedlock.DistributedLocker;
+import com.eelve.redissionlock.distributedlock.RedissonDistributedLocker;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;

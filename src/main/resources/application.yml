@@ -11,13 +11,15 @@ redisson:
 spring:
   datasource:
     username: root
-    password: 19941130
-    url: jdbc:mysql://localhost:3306/testredissonlock?&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    password: root
+    url: jdbc:mysql://localhost:3306/test?&autoReconnect=true&failOverReadOnly=false&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-
+  aop:
+    proxy-target-class: false
+    auto: false
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: cachae.entity
+  type-aliases-package: com.eelve.redissionlock.cachae.entity
 
   #哨兵模式
   #master-name: mymaster

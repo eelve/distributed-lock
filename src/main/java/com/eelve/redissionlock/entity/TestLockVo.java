@@ -1,4 +1,4 @@
-package cachae.entity;
+package com.eelve.redissionlock.entity;
 
 /**
  * @Description Created by zeng.yubo on 2019/8/11.

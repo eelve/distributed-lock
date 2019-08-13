@@ -1,10 +1,8 @@
-package cachae.controller;
+package com.eelve.redissionlock.controller;
 
-import cachae.distributedlock.DistributedLocker;
-import cachae.distributedlock.annotation.Lock;
-import cachae.entity.TestLockVo;
-import cachae.mapper.TestLockDAO;
-import cachae.service.testAnnoService;
+import com.eelve.redissionlock.distributedlock.DistributedLocker;
+import com.eelve.redissionlock.mapper.TestLockDAO;
+import com.eelve.redissionlock.service.testAnnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,7 +1,7 @@
-package cachae.mapper;
+package com.eelve.redissionlock.mapper;
 
-import cachae.distributedlock.annotation.Lock;
-import cachae.entity.TestLockVo;
+import com.eelve.redissionlock.distributedlock.annotation.Lock;
+import com.eelve.redissionlock.entity.TestLockVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

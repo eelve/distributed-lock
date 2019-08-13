@@ -1,6 +1,6 @@
-package cachae.distributedlock.annotation;
+package com.eelve.redissionlock.distributedlock.annotation;
 
-import cachae.distributedlock.DistributedLocker;
+import com.eelve.redissionlock.distributedlock.DistributedLocker;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

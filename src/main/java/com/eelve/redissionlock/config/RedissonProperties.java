@@ -1,4 +1,4 @@
-package cachae.config;
+package com.eelve.redissionlock.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

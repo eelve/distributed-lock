@@ -1,6 +1,6 @@
-package cachae.distributedlock;
+package com.eelve.redissionlock.distributedlock;
 
-import cachae.distributedlock.lockservice.ISynMethod;
+import com.eelve.redissionlock.distributedlock.lockservice.ISynMethod;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 

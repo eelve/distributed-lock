@@ -1,8 +1,8 @@
-package cachae.service;
+package com.eelve.redissionlock.service;
 
-import cachae.distributedlock.annotation.Lock;
-import cachae.entity.TestLockVo;
-import cachae.mapper.TestLockDAO;
+import com.eelve.redissionlock.distributedlock.annotation.Lock;
+import com.eelve.redissionlock.entity.TestLockVo;
+import com.eelve.redissionlock.mapper.TestLockDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,6 @@
 package com.eelve.redissionlock.config;
 
 
-import com.eelve.redissionlock.aoplock.AopLockAdvisor;
 import com.eelve.redissionlock.distributedlock.DistributedLocker;
 import com.eelve.redissionlock.distributedlock.RedissonDistributedLocker;
 import org.apache.commons.lang3.StringUtils;
@@ -78,12 +77,6 @@ public class RedissonAutoConfiguration {
         locker.setRedissonClient(redissonClient);
 //        RedissLockUtil.setLocker(locker);
         return locker;
-    }
-
-    @Bean
-    //@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
-    public AopLockAdvisor aopLockAdvisor(DistributedLocker lockManager) {
-        return new AopLockAdvisor();
     }
 
 }

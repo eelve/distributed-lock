@@ -3,6 +3,7 @@ server:
 
 redisson:
   address: config://127.0.0.1:6379
+  password: 1qaz@WSX
   timeout: 3000
   connectionPoolSize: 64
   #最小空闲连接数
@@ -12,14 +13,11 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/test?&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    url: jdbc:mysql://localhost:3306/training?&autoReconnect=true&failOverReadOnly=false&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-  aop:
-    proxy-target-class: false
-    auto: false
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.eelve.redissionlock.cachae.entity
+  type-aliases-package: cachae.entity
 
   #哨兵模式
   #master-name: mymaster

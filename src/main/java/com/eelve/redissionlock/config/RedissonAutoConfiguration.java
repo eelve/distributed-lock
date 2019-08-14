@@ -83,7 +83,7 @@ public class RedissonAutoConfiguration {
     @Bean
     //@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
     public AopLockAdvisor aopLockAdvisor(DistributedLocker lockManager) {
-        return new AopLockAdvisor();
+        return new AopLockAdvisor(lockManager);
     }
 
 }

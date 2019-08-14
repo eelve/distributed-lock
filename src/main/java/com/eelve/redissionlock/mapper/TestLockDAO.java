@@ -11,7 +11,6 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface TestLockDAO {
 
-    @Lock
     TestLockVo getVoById(@Param("id") int id);
 
     void updateVoById(TestLockVo vo);

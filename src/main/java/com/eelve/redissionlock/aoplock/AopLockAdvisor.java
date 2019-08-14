@@ -1,8 +1,12 @@
 package com.eelve.redissionlock.aoplock;
 
+import com.eelve.redissionlock.distributedlock.DistributedLocker;
 import com.eelve.redissionlock.distributedlock.annotation.Lock;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.util.ReflectionUtils;
 
@@ -16,6 +20,32 @@ import java.util.List;
  * @Description Created by zeng.yubo on 2019/8/12.
  */
 public class AopLockAdvisor extends StaticMethodMatcherPointcutAdvisor {
+
+    public AopLockAdvisor(DistributedLocker distributedLocker){
+        setAdvice((MethodInterceptor) methodObj -> {
+            Method method = methodObj.getMethod();
+            Lock lockAnn = findMethodAnnotation(method.getDeclaringClass(),method,Lock.class);
+            String lockName = lockAnn.value();
+            int lessTime = lockAnn.leaseTime();
+            if(StringUtils.isEmpty(lockName)){
+                lockName = method.getName();
+            }
+            if(lessTime<0){
+                lessTime = 30;
+            }
+            distributedLocker.lock(lockName,lessTime);
+            System.out.println("上锁");
+            try {
+                return methodObj.proceed();
+            } finally {
+                //如果该线程还持有该锁，那么释放该锁。如果该线程不持有该锁，说明该线程的锁已到过期时间，自动释放锁
+                System.out.println("释放");
+                if (distributedLocker.isHeldByCurrentThread(lockName)) {
+                    distributedLocker.unlock(lockName);
+                }
+            }
+        });
+    }
 
     //匹配到的方法加入到AOP中，织入
     @Override
